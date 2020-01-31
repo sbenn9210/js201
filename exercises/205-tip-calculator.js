@@ -10,7 +10,20 @@
 // tipAmount(100, 'good') --> 20
 // tipAmount(40, 'fair') --> 6
 
+function tipAmount(amount, service) {
+  switch (service) {
+    case "good":
+      return amount * 0.2;
+    case "fair":
+      return amount * 0.15;
+    case "poor":
+      return amount * 0.1;
+    default:
+      return amount * 0.2;
+  }
+}
 
+console.assert(tipAmount(40, "fair") === 6, "Calculation is wrong");
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "totalAmount" that takes the same arguments as "tipAmount"
@@ -20,9 +33,9 @@
 // Examples:
 // totalAmount(100, 'good') --> 120
 // totalAmount(40, 'fair') --> 46
-
-
-
+function totalAmount(amount, service) {
+  return tipAmount(amount, service) + amount;
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "splitAmount" that takes a bill amount, the level of service,
 // and the number of people to split the bill between. It should return the final
@@ -31,3 +44,7 @@
 // Examples:
 // splitAmount(100, 'good', 5) --> 24
 // splitAmount(40, 'fair', 2) --> 23
+
+function splitAmount(billAmount, service, people) {
+  return totalAmount(billAmount, service) / people;
+}
