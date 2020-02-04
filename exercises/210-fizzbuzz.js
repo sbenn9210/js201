@@ -9,3 +9,22 @@
 // Examples:
 // fizzbuzz(3) --> '..fizz'
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
+
+function fizzbuzz(num) {
+  var result = "";
+  for (var i = 1; i <= num; i++) {
+    if (i % 3 !== 0 && i % 5 !== 0) {
+      result += ".";
+    }
+    if (i % 3 === 0 && i % 5 !== 0) {
+      result += "fizz";
+    }
+    if (i % 3 !== 0 && i % 5 === 0) {
+      result += "buzz";
+    }
+    if (i % 3 === 0 && i % 5 === 0) {
+      result += "fizzbuzz";
+    }
+  }
+  return result;
+}

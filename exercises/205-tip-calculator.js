@@ -10,16 +10,16 @@
 // tipAmount(100, 'good') --> 20
 // tipAmount(40, 'fair') --> 6
 
-function tipAmount(amount, service) {
+function tipAmount(billAmount, service) {
   switch (service) {
     case "good":
-      return amount * 0.2;
+      return billAmount * 0.2;
     case "fair":
-      return amount * 0.15;
+      return billAmount * 0.15;
     case "poor":
-      return amount * 0.1;
+      return billAmount * 0.1;
     default:
-      return amount * 0.2;
+      return billAmount * 0.2;
   }
 }
 
@@ -33,8 +33,8 @@ console.assert(tipAmount(40, "fair") === 6, "Calculation is wrong");
 // Examples:
 // totalAmount(100, 'good') --> 120
 // totalAmount(40, 'fair') --> 46
-function totalAmount(amount, service) {
-  return tipAmount(amount, service) + amount;
+function totalAmount(billAmount, service) {
+  return tipAmount(billAmount, service) + billAmount;
 }
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "splitAmount" that takes a bill amount, the level of service,

@@ -20,8 +20,20 @@
 // isVowel('A') --> true
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
-
-
+function isVowel(str) {
+  if (typeof str === "string") {
+    var lowerCaseStr = str.toLowerCase();
+    return (typeof lowerCaseStr === "string" && lowerCaseStr === "a") ||
+      lowerCaseStr === "e" ||
+      lowerCaseStr === "i" ||
+      lowerCaseStr === "o" ||
+      lowerCaseStr === "u"
+      ? true
+      : false;
+  } else {
+    return false;
+  }
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
@@ -36,9 +48,21 @@
 // isOdd(5) --> true
 // isOdd('7') --> false
 // isOdd(3.14) --> false
-
-
-
+function isEven(num) {
+  if (typeof num !== "number" || num % 2 !== 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+function isOdd(num) {
+  if (typeof num !== "number" || num % 1 !== 0) return false;
+  else if (num & (2 != 0)) {
+    return true;
+  } else {
+    return false;
+  }
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "isCapitalCity" that takes two arguments: a US state and a city name
 // and returns true or false if the city name is the capital of the state.
@@ -53,3 +77,44 @@
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Questions Was the expectation to be import the json object from another source?
+//gist.github.com/jpriebe/d62a45e29f24e843c974
+
+https: //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+var states = {
+  TX: {
+    name: "Texas",
+    capital: "Austin",
+    lat: "30.266667",
+    long: "-97.75"
+  },
+  AK: {
+    name: "Alaska",
+    capital: "Juneau",
+    lat: "58.301935",
+    long: "-134.419740"
+  }
+};
+
+function isCapitalCity(capital, state) {
+  if (
+    (capital == states.TX.capital && state == states.TX.state) ||
+    (capital == states.AK.capital && state == states.AK.state) ||
+    (capital == states.TX.name && state == states.TX.capital) ||
+    (capital == states.AK.name && state == states.AK.capital)
+  ) {
+    return true;
+  }
+  if (
+    state == states.TX.capital ||
+    state == states.AK.capital ||
+    state == states.TX.name ||
+    state == states.AK.name
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
