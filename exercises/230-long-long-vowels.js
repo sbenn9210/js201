@@ -8,3 +8,11 @@
 // 'Cheeeeese'
 // > longLongVowels('Man')
 // 'Man'
+
+function longLongVowels(word) {
+  var longWord = word.split("");
+  var vowel = longWord.filter(function(letter, index, arr) {
+    return arr[index] === arr[index + 1] ? letter : null;
+  });
+  return vowel.length === 0 ? word : word.replace(vowel[0], vowel[0].repeat(4));
+}
