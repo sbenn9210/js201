@@ -8,8 +8,13 @@
 // *****
 // *****
 
-function makeSquare() {
-    
+function makeSquare(num) {
+  var star = "*";
+  var square = "";
+  for (var i = 0; i < num; i++) {
+    square += star.repeat(num) + "\n";
+  }
+  return square.trim();
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -22,10 +27,20 @@ function makeSquare() {
 // *    *
 // ******
 
-function makeBox() {
-
+function makeBox(width, height) {
+  var shape = "";
+  for (j = 1; j <= height; j++) {
+    for (i = 1; i <= width; i++) {
+      if (i == 1 || i == width || j == 1 || j == height) {
+        shape += "*";
+      } else {
+        shape += " ";
+      }
+    }
+    shape += "\n";
+  }
+  return shape.trim();
 }
-
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "makeBanner" which is given some text and returns a banner
@@ -37,6 +52,20 @@ function makeBox() {
 // * Welcome to DigitalCrafts *
 // ****************************
 
-function makeBanner() {
-
+function makeBanner(text) {
+  var textArr = text.split("");
+  textArr.unshift("  ", " ");
+  textArr.push(" ", " ");
+  var shape = "";
+  for (j = 1; j <= 3; j++) {
+    for (i = 1; i <= textArr.length; i++) {
+      if (i == 1 || i == textArr.length || j == 1 || j == 3) {
+        shape += "*";
+      } else {
+        shape += textArr[i - 1];
+      }
+    }
+    shape += "\n";
+  }
+  return shape.trim();
 }

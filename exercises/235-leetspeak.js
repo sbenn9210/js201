@@ -14,3 +14,24 @@
 // Examples:
 // leetspeak('Leet') --> "l337"
 // leetspeak('ORANGE') --> "0r4n63"
+
+var leetChars = {
+  a: { value: 4 },
+  e: { value: 3 },
+  g: { value: 6 },
+  i: { value: 1 },
+  o: { value: 0 },
+  s: { value: 5 },
+  t: { value: 7 }
+};
+
+function leetspeak(str) {
+  var splitStr = str.toLowerCase().split("");
+  let leetArr = splitStr.map(letter => {
+    return typeof leetChars[letter] === "undefined"
+      ? letter
+      : leetChars[letter].value;
+  });
+
+  return leetArr.join("");
+}
