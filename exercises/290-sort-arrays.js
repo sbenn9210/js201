@@ -8,7 +8,9 @@
 // alphaSort(['b', 'a', 'c'])
 // > ['a', 'b', 'c']
 
-
+function alphaSort(arr) {
+  return arr.sort();
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "strLengthSort" that sorts an array of strings by how long
@@ -18,8 +20,11 @@
 // strLengthSort(['Apple', 'Banana', 'Cherry'])
 // > ['Apple', 'Cherry', 'Banana']
 
-
-
+function strLengthSort(arr) {
+  return arr.sort(function(a, b) {
+    return a.length - b.length;
+  });
+}
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "sumSort". Given an array of array of numbers like:
 // var arr = [
@@ -38,3 +43,9 @@
 //   [4, 5]
 // ])
 // > [[2], [4, 5], [9, 1, 9]]
+
+function sumSort(arr) {
+  return arr.sort((a, b) => {
+    return a - b;
+  });
+}
