@@ -23,3 +23,37 @@
 //   [null, 'X', 'X']
 //   ])
 // null
+
+function ticTacToe(arr) {
+  var winner = null;
+
+  // first check for winner in each row
+  arr.forEach(row => {
+    return row.filter((item, i, arr) => {
+      if (arr[0] === arr[1] && arr[0] === arr[2]) {
+        winner = arr[0];
+      }
+    });
+  });
+
+  //check for diagonal & and column
+  var firstRow = arr[0];
+  var secondRow = arr[1];
+  var thirdRow = arr[2];
+
+  if (firstRow[0] === secondRow[0] && firstRow[0] === thirdRow[0]) {
+    winner = firstRow[0];
+  } else if (firstRow[1] === secondRow[1] && firstRow[1] === thirdRow[1]) {
+    winner = firstRow[1];
+  } else if (firstRow[2] === secondRow[2] && firstRow[2] === thirdRow[2]) {
+    winner = firstRow[2];
+  }
+
+  if (firstRow[0] === secondRow[1] && firstRow[0] === thirdRow[2]) {
+    winner = firstRow[0];
+  } else if (firstRow[2] === secondRow[1] && firstRow[2] === thirdRow[0]) {
+    winner = firstRow[2];
+  }
+
+  return winner;
+}

@@ -4,7 +4,13 @@
 // > matrixAdd([[1, 3], [2, 4]], [[5, 2], [1, 0]])
 // [ [ 6, 5 ], [ 3, 4 ] ]
 
-
+function matrixAdd(arr1, arr2) {
+  var result = [
+    [arr1[0][0] + arr2[0][0], arr1[0][1] + arr2[0][1]],
+    [arr1[1][0] + arr2[1][0], arr1[1][1] + arr2[1][1]]
+  ];
+  return result;
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "matrixMultiply" which is given two two-dimensional arrays;
@@ -15,3 +21,18 @@
 // Example:
 // > matrixMultiply([[2, 4], [3, 4]], [[5, 2], [3, 1]])
 // [ [22,  8], [27, 10] ]
+
+function matrixMultiply(arr1, arr2) {
+  var result = [
+    [
+      arr1[0][0] * arr2[0][0] + arr1[0][1] * arr2[1][0],
+      arr1[0][0] * arr2[0][1] + arr1[0][1] * arr2[1][1]
+    ],
+
+    [
+      arr1[1][0] * arr2[0][0] + arr1[1][1] * arr2[1][0],
+      arr1[1][0] * arr2[0][1] + arr1[1][1] * arr2[1][1]
+    ]
+  ];
+  return result;
+}
