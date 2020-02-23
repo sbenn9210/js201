@@ -46,6 +46,15 @@ function strLengthSort(arr) {
 
 function sumSort(arr) {
   return arr.sort((a, b) => {
-    return a - b;
+    var aTotal = 0;
+    var bTotal = 0;
+    a.forEach(item => {
+      aTotal += item;
+    });
+    b.forEach(item => {
+      bTotal += item;
+    });
+
+    return aTotal - bTotal;
   });
 }

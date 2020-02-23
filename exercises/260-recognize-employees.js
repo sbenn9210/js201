@@ -15,3 +15,16 @@
 // > ['Great job, Susan!', 'Great job, Anthony!', 'Great job, Bill!']
 //
 // Hint: What is the best data structure for the employees of the month list?
+
+function recognizeEmployees(arr1, arr2) {
+  var accouncement = {};
+  var recognize = arr1.filter(person => !arr2.includes(person));
+  var recognized = recognize.map(person => {
+    accouncement[person] = "Great job, " + person + "!";
+  });
+  var EOTM = arr2.map(person => {
+    accouncement[person] = "Outstanding job, " + person + "!";
+  });
+
+  return arr1.map(person => accouncement[person]);
+}

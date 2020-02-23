@@ -22,10 +22,10 @@
 // In this example we assume there is a function "hello" already defined and
 // that it prints "Hello, world!" to the console.
 
-callNtimes = (num, callBackFunc) => {
+function callNTimes(num, callBackFunc) {
   var i = 0;
   while (i < num) {
     callBackFunc();
     i++;
   }
-};
+}
